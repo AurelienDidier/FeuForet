@@ -15,8 +15,12 @@ class PasArbre: public Arbre {
 public:
 	void propage(Foret &foret, int ligne, int colonne) override ;
 	PasArbre();
+	PasArbre(Etat etatInit);
+
 	~PasArbre();
 	virtual string getImage() override ;
+	PasArbre clone();
+
 
 };
 

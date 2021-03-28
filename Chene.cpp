@@ -7,6 +7,11 @@ Chene::Chene() {
 	etat = Etat::EnVie;
 }
 
+Chene::Chene(Etat etatInit) {
+	etat = etatInit;
+}
+
+
 Chene::~Chene() {
 }
 
@@ -23,29 +28,24 @@ string Chene::getImage() {
 }
 
 void Chene::propage(Foret &foret, int ligne, int colonne) {
-//	if (ligne<foret.arbres.size() and colonne < foret.arbres[0].size()){
-//		foret.arbres[ligne+1][colonne+1]->brule();
-//	}
-	if (ligne<foret.arbres.size()){
-		foret.arbres[ligne+1][colonne]->brule();
+	if (this->etat == Etat::EnFeu) {
+
+		if (ligne < foret.arbres.size()-1) {
+			foret.arbres[ligne + 1][colonne]->brule();
+		}
+		if (ligne > 0) {
+			foret.arbres[ligne - 1][colonne]->brule();
+		}
+		if (colonne > 0) {
+			foret.arbres[ligne][colonne - 1]->brule();
+		}
+		if (colonne < foret.arbres[0].size()-1) {
+			foret.arbres[ligne][colonne + 1]->brule();
+		}
+		this->etat = Etat::EnCendre;
 	}
-//	if (ligne<foret.arbres.size() and colonne > 0){
-//		foret.arbres[ligne+1][colonne-1]->brule();
-//	}
-//	if (ligne>0 and colonne < foret.arbres[0].size()){
-//		foret.arbres[ligne-1][colonne+1]->brule();
-//	}
-	if (ligne>0){
-		foret.arbres[ligne-1][colonne]->brule();
-	}
-//	if (ligne>0 and colonne >0){
-//		foret.arbres[ligne-1][colonne-1]->brule();
-//	}
-	if (colonne >0){
-		foret.arbres[ligne][colonne-1]->brule();
-	}
-	if (colonne < foret.arbres[0].size()){
-		foret.arbres[ligne][colonne+1]->brule();
-	}
-	this->etat=Etat::EnCendre;
+}
+
+Arbre Chene::clone(){
+	return Chene();
 }

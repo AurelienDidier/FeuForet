@@ -14,9 +14,12 @@ class Chene: public Arbre {
 	
 public:
 	Chene();
+	Chene(Etat etatInit);
 	~Chene();
 	void propage(Foret &foret, int ligne, int colonne) override ;
 	virtual string getImage() override ;
+	Arbre clone();
+
 };
 
 #endif /* Chene_HPP_ */

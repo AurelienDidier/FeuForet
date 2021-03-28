@@ -28,6 +28,12 @@ string Arbre::getImage() {
 void Arbre::propage(Foret &foret, int ligne, int colonne){
 }
 
+Arbre Arbre::clone(){
+
+}
+
+
+
 //Etat getEtat(){
 //	return this.etat;
 //}

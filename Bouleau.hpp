@@ -15,9 +15,10 @@ class Bouleau: public Arbre {
 public:
 	void propage(Foret &foret, int ligne, int colonne) override ;
 	Bouleau();
+	Bouleau(Etat etatInit);
 	~Bouleau();
 	virtual string getImage() override ;
-
+	Arbre clone();
 };
 
 #endif /* Bouleau_HPP_ */

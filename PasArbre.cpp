@@ -16,3 +16,11 @@ string PasArbre::getImage() {
 void PasArbre::propage(Foret &foret, int ligne, int colonne){
 	etat=Etat::EnVie;
 }
+
+PasArbre::PasArbre(Etat etatInit) {
+	etat = etatInit;
+}
+
+PasArbre PasArbre::clone(){
+	return PasArbre();
+}

@@ -12,14 +12,14 @@ class Foret;
 
 class Arbre {
 
-protected:
-	Etat etat;
 	
 public:
+	Etat etat;
 	virtual void propage(Foret &foret, int ligne, int colonne);
 	void brule();
 	virtual string getImage();
 	virtual ~Arbre();
+	Arbre clone();
 //	Etat getEtat();
 };
 
