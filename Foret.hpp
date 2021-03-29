@@ -23,7 +23,7 @@ public:
 	int colonne;
 	vector<vector<Arbre*>> arbres;
 	Foret(int ligne, int colonne, int pourcentagePeuplier, int pourcentageChene, int pourcentageBouleau);
-	Foret(Foret &foret);
+	Foret(int ligne, int colonne);
 	int getNbArbreEnFeu();
 	void afficheForet();
 	void copieEtat(Foret foret);

@@ -14,7 +14,7 @@ string PasArbre::getImage() {
 }
 
 void PasArbre::propage(Foret &foret, int ligne, int colonne){
-	etat=Etat::EnVie;
+//	etat=Etat::EnVie;
 }
 
 PasArbre::PasArbre(Etat etatInit) {
