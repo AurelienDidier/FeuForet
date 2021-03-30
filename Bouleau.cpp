@@ -1,32 +1,19 @@
+/*
+ * Bouleau.cpp
+ *
+ *  Created on: 30 mars 2021
+ *      Author: GAME1.1
+ */
+
 #include "Bouleau.hpp"
 #include <iostream>
 
-using namespace std;
-
-Bouleau::Bouleau() {
-	etat = Etat::EnVie;
-}
-Bouleau::Bouleau(Etat etatInit) {
-	etat = etatInit;
+Bouleau::Bouleau(){
+	etat= Etat::enVie;
 }
 
-Bouleau::~Bouleau() {
-}
-
-string Bouleau::getImage() {
-	if (etat == Etat::EnVie) {
-		return " B ";
-	} else if (etat == Etat::EnFeu) {
-		return " * ";
-	} else if (etat == Etat::EnCendre) {
-		return " # ";
-
-	}
-	return "   ";
-}
-
-void Bouleau::propage(Foret &foret, int ligne, int colonne) {
-	if (this->etat == Etat::EnFeu) {
+void Bouleau::propage(Foret &foret, int ligne, int colonne){
+	if (this->etat == Etat::enFeu) {
 		if (ligne < foret.arbres.size() - 1
 				and colonne < foret.arbres[0].size() - 1) {
 			foret.arbres[ligne + 1][colonne + 1]->brule();
@@ -52,13 +39,22 @@ void Bouleau::propage(Foret &foret, int ligne, int colonne) {
 		if (colonne < foret.arbres[0].size() - 1) {
 			foret.arbres[ligne][colonne + 1]->brule();
 		}
-		foret.arbres[ligne][colonne]->etat = Etat::EnCendre;
+		foret.arbres[ligne][colonne]->etat = Etat::enCendre;
 	}
-
 }
 
-Arbre Bouleau::clone(){
-	return Bouleau();
+string Bouleau::getImage(){
+	if (etat==Etat::enVie){
+		return " B ";
+	}
+	if (etat==Etat::enFeu){
+		return " * ";
+	}
+	if (etat==Etat::enCendre){
+		return " # ";
+	}
+	return "   ";
 }
+
 
 

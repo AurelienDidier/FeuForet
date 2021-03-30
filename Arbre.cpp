@@ -1,39 +1,33 @@
+/*
+ * Arbre.cpp
+ *
+ *  Created on: 30 mars 2021
+ *      Author: GAME1.1
+ */
+
 #include "Arbre.hpp"
-#include <iostream>
 
-using namespace std;
-
-//class Foret;
-
-void Arbre::brule() {
-	if (etat==Etat::EnVie) {
-		etat=Etat::EnFeu;
+void Arbre::brule(){
+	if (etat== Etat::enVie){
+		etat= Etat::enFeu;
 	}
 }
+void Arbre::propage(Foret &foret, int ligne, int colonne){
 
-Arbre::~Arbre() {
 }
-string Arbre::getImage() {
-	if (etat == Etat::EnVie) {
+
+string Arbre::getImage(){
+	if (etat==Etat::enVie){
 		return " A ";
-	} else if (etat == Etat::EnFeu) {
+	}
+	if (etat==Etat::enFeu){
 		return " * ";
-	} else if (etat == Etat::EnFeu) {
+	}
+	if (etat==Etat::enCendre){
 		return " # ";
 	}
-	return"   ";
-}
-
-
-void Arbre::propage(Foret &foret, int ligne, int colonne){
-}
-
-Arbre Arbre::clone(){
-
+	return "   ";
 }
 
 
 
-//Etat getEtat(){
-//	return this.etat;
-//}

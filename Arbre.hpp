@@ -1,26 +1,30 @@
-#ifndef Arbre_HPP_
-#define Arbre_HPP_
+/*
+ * Arbre.hpp
+ *
+ *  Created on: 23 mars 2021
+ *      Author: GAME1.1
+ */
+
+#ifndef ARBRE_HPP_
+#define ARBRE_HPP_
 
 #include <iostream>
-//#include "Foret.hpp"
+
 
 using namespace std;
 
-enum Etat {EnVie, EnFeu, EnCendre};
+enum Etat { enVie, enFeu, enCendre};
 
 class Foret;
-
 class Arbre {
 
-	
 public:
 	Etat etat;
-	virtual void propage(Foret &foret, int ligne, int colonne);
 	void brule();
+	virtual void propage(Foret &foret, int ligne, int colonne);
 	virtual string getImage();
-	virtual ~Arbre();
-	Arbre clone();
-//	Etat getEtat();
 };
 
-#endif /* Arbre_HPP_ */
+
+
+#endif /* ARBRE_HPP_ */

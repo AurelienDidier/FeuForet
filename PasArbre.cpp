@@ -1,26 +1,24 @@
+/*
+ * PasArbre.cpp
+ *
+ *  Created on: 30 mars 2021
+ *      Author: GAME1.1
+ */
+
 #include "PasArbre.hpp"
 #include <iostream>
 
-using namespace std;
 
-PasArbre::PasArbre() {
-	etat=Etat::EnVie;
-}
-
-PasArbre::~PasArbre(){
-}
-string PasArbre::getImage() {
-	return "   ";
+PasArbre::PasArbre(){
+	etat= Etat::enVie;
 }
 
 void PasArbre::propage(Foret &foret, int ligne, int colonne){
-//	etat=Etat::EnVie;
 }
 
-PasArbre::PasArbre(Etat etatInit) {
-	etat = etatInit;
+string PasArbre::getImage(){
+	return "   ";
 }
 
-PasArbre PasArbre::clone(){
-	return PasArbre();
-}
+
+

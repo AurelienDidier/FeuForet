@@ -5,25 +5,25 @@
  *      Author: GAME1.1
  */
 
-#ifndef PasArbre_HPP_
-#define PasArbre_HPP_
+#ifndef Sapin_HPP_
+#define Sapin_HPP_
 
 #include <iostream>
 #include "Arbre.hpp"
+#include "Foret.hpp"
 
 using namespace std;
 
 class Arbre;
-class Foret;
 
-class PasArbre: public Arbre {
+class Sapin: public Arbre {
 
 public:
-	PasArbre();
+	Sapin();
 	void propage(Foret &foret, int ligne, int colonne) override;
 	string getImage() override;
 };
 
 
 
-#endif /* PasArbre_HPP_ */
+#endif /* Sapin_HPP_ */

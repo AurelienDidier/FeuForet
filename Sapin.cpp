@@ -1,22 +1,19 @@
 /*
- * Chene.cpp
+ * Sapin.cpp
  *
  *  Created on: 30 mars 2021
  *      Author: GAME1.1
  */
 
-#include "Chene.hpp"
+#include "Sapin.hpp"
 #include <iostream>
 
-class Foret;
-
-Chene::Chene(){
+Sapin::Sapin(){
 	etat= Etat::enVie;
 }
 
-void Chene::propage(Foret &foret, int ligne, int colonne){
+void Sapin::propage(Foret &foret, int ligne, int colonne){
 	if (this->etat == Etat::enFeu) {
-
 		if (ligne < foret.arbres.size()-1) {
 			foret.arbres[ligne + 1][colonne]->brule();
 		}
@@ -29,14 +26,13 @@ void Chene::propage(Foret &foret, int ligne, int colonne){
 		if (colonne < foret.arbres[0].size()-1) {
 			foret.arbres[ligne][colonne + 1]->brule();
 		}
-		this->etat = Etat::enCendre;
+		foret.arbres[ligne][colonne]->etat = Etat::enCendre;
 	}
-
 }
 
-string Chene::getImage(){
+string Sapin::getImage(){
 	if (etat==Etat::enVie){
-		return " C ";
+		return " S ";
 	}
 	if (etat==Etat::enFeu){
 		return " * ";
@@ -46,3 +42,6 @@ string Chene::getImage(){
 	}
 	return "   ";
 }
+
+
+

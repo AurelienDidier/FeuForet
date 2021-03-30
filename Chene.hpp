@@ -1,25 +1,30 @@
+/*
+ * Arbre.hpp
+ *
+ *  Created on: 23 mars 2021
+ *      Author: GAME1.1
+ */
+
 #ifndef Chene_HPP_
 #define Chene_HPP_
 
 #include <iostream>
+#include "Arbre.hpp"
 #include "Foret.hpp"
-#include "Chene.hpp"
 
 using namespace std;
 
-class Foret;
 class Arbre;
+class Foret;
 
 class Chene: public Arbre {
-	
+
 public:
 	Chene();
-	Chene(Etat etatInit);
-	~Chene();
-	void propage(Foret &foret, int ligne, int colonne) override ;
-	virtual string getImage() override ;
-	Arbre clone();
-
+	void propage(Foret &foret, int ligne, int colonne) override;
+	string getImage() override;
 };
+
+
 
 #endif /* Chene_HPP_ */
