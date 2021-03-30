@@ -29,8 +29,9 @@ void Chene::propage(Foret &foret, int ligne, int colonne){
 		if (colonne < foret.arbres[0].size()-1) {
 			foret.arbres[ligne][colonne + 1]->brule();
 		}
+		foret.arbres[ligne][colonne]->etat = Etat::enCendre;
+
 	}
-	foret.arbres[ligne][colonne]->etat = Etat::enCendre;
 
 
 }
